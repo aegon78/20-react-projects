@@ -25,3 +25,14 @@ body{
     border-radius: 30px;
 }
 
+.danger{
+    background-color: rgb(174, 7, 7);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 24px;
+}
+
+.danger:hover{
+    background-color: rgb(145, 3, 3);
+}
