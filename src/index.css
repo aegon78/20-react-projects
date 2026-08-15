@@ -48,6 +48,19 @@ input{
     width: 100%;
 }
 
+.btns-ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.delete-btn{
+    background-color: rgb(153, 50, 50);
+}
+
+.edit-btn{
+    background-color: gray;
+}
 @media(min-width: 1024px){
     .container{
         grid-template-columns: repeat(2, 1fr);

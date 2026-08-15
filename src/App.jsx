@@ -24,6 +24,10 @@ function App() {
       toast.success('New text Added!');
     }
   };
+
+  const handleDelete = (id)=>{
+    setItems(items.filter(item => item.id !== id))
+  }
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
@@ -42,10 +46,11 @@ function App() {
         </button>
       </form>
 
-      <List items={items} />
+      <List items={items} handleDelete={handleDelete}/>
       <ToastContainer />
     </div>
   );
 }
+
 
 export default App;
