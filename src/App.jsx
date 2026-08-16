@@ -47,8 +47,14 @@ function App() {
     setItems([]);
     alert('do you really want to perform this action?')
     toast.info('List was deleted');
-
   };
+  
+  //useEffect
+  
+  useEffect(()=> {
+    localStorage.setItem("items", JSON.stringify(items))
+  }, [items])
+
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
