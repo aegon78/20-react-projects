@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+p{
+  line-height: 1.8;
+  color: #f1f1f1
+}
+
+.container{
+  background-color: #000;
+  padding: 24px;
+  border-radius: 10px;
+}
