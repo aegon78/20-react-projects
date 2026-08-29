@@ -1,9 +1,9 @@
 import React from 'react';
 
-const FrontCard = () => {
+const FrontCard = ( { setIsShowing } ) => {
   return (
     <>
-      <div className="container">
+      <div className="container" onClick={()=> setIsShowing(true)}>
         <h2>Mohammed Taha Kechad</h2>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis

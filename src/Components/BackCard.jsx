@@ -1,8 +1,8 @@
 import React from 'react'
 
-const BackCard = () => {
+const BackCard = ( { setIsShowing }) => {
   return (
-    <div className="container">
+    <div className="container" onClick={()=> setIsShowing(false)}>
       <h2>Contact me</h2>
       <p>email: email@example.com</p>
       <p>phone number: +1 3171 111 553</p>

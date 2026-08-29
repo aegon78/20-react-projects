@@ -4,12 +4,16 @@ import FrontCard from './Components/FrontCard';
 import BackCard from './Components/BackCard';
 
 function App() {
-  const [isShowing, setIsShowing] = useState(false)
+  const [isShowing, setIsShowing] = useState(false);
   return (
     <>
-      {isShowing ? <BackCard /> : <FrontCard />}
+      {isShowing ? (
+        <BackCard setIsShowing={setIsShowing} />
+      ) : (
+        <FrontCard setIsShowing={setIsShowing} />
+      )}
     </>
-  )
+  );
 }
 
 export default App;

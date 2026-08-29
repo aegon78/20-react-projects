@@ -33,4 +33,5 @@ p.truman{
   border-radius: 30px;
   max-width: 500px;
   min-height: 250px;
+  cursor: pointer;
 }
