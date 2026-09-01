@@ -1,18 +1,13 @@
-import { useState } from 'react';
+import Markdown from './components/Markdown';
+import Preview from './components/Preview';
 import './index.css';
-import FrontCard from './Components/FrontCard';
-import BackCard from './Components/BackCard';
 
 function App() {
-  const [isShowing, setIsShowing] = useState(false);
   return (
-    <>
-      {isShowing ? (
-        <BackCard setIsShowing={setIsShowing} />
-      ) : (
-        <FrontCard setIsShowing={setIsShowing} />
-      )}
-    </>
+    <div className='container'>
+      <Markdown />
+      <Preview />    
+    </div>
   );
 }
 
