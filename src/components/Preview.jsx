@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Preview() {
+function Preview({markdown}) {
   return (
-    <div className="preview">Preview</div>
+    <div className="preview">{markdown}</div>
   )
 }
 
