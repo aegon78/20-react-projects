@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function Preview({markdown}) {
+function Preview({ markdown, md }) {
   return (
-    <div className="preview">{markdown}</div>
-  )
+    <div
+      className="preview"
+      dangerouslySetInnerHTML={{ __html: md.render(markdown) }}
+    ></div>
+  );
 }
 
-export default Preview
+export default Preview;
