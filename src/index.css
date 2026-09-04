@@ -3,45 +3,37 @@
   padding: 0;
   box-sizing: border-box;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 body{
-  background-color: #000;
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-code{
-  font-family: source-code-pro;
+.password-generator{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.p{
-  line-height: 1.8;
-  font-size: 1rem;
+article{
+  display: flex;
+  justify-content: space-between;
 }
 
-.container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* padding: 1rem ; */
-
+article label{
+  margin-right: 20px;
+  /* padding-right: 100%; */
+}
+button{
+  color: #000;
+  font-size: 0.9rem;
 }
 
-.markdown{
-  border-right: 3px solid #fff;
-  height: 100vh;
-
-  padding: 1rem;
-}
-
-.preview{
-  padding: 1rem;
-}
-
-textarea{
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  font-size: 1.4rem;
-  outline: none;
-  border: none;
+input{
+  color: #000
 }
