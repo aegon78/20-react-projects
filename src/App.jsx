@@ -1,18 +1,45 @@
 import './index.css';
+import { nums, lower, upper, syms } from './data';
 import React, { useState } from 'react';
 
 function App() {
-  const [length, setLength] = useState(8);
+  const [pLength, setpLength] = useState(8);
   const [lowercase, setLowercase] = useState(false);
   const [uppercase, setUppercase] = useState(false);
   const [numbers, setNumbers] = useState(false);
   const [symbols, setSymbols] = useState(false);
+  const [password, setPassword] = useState('')
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+  }
+
+  const generatePassword = () =>{
+    let generatedPassword = ''
+    if (lowercase) generatedPassword += lower
+    if (uppercase) generatedPassword += upper
+    if (numbers) generatedPassword += nums
+    if (symbols) generatedPassword += syms
+    setPassword(createPassword(generatedPassword))
+  }
+
+  const createPassword = (generatedPassword) =>{
+    let password = ''
+    const generatedPasswordLength = generatedPassword.length
+    for(let i = 0; i < pLength; i++){
+      const passwordIndex = Math.floor(Math.random() * generatedPasswordLength) 
+      password += generatedPassword.toString().charAt(passwordIndex)
+    }
+    return password
+    
+  }
+
   return (
     <div className="container">
       <h1>Password Generator</h1>
       <div className="password-generator">
-        <p className="generated-password">Generated Password</p>
-        <form action="">
+        <p className="generated-password">{password}</p>
+        <form onSubmit={handleSubmit}>
           <article>
             <label htmlFor="password-length">Password Length</label>
             <input
@@ -23,7 +50,7 @@ function App() {
               max="20"
               placeholder="8-20"
               defaultValue={length}
-              onChange={(e) => setLength(e.target.value)}
+              onChange={(e) => setpLength(e.target.value)}
             />
           </article>
           <article>
@@ -70,7 +97,7 @@ function App() {
             />
           </article>
 
-          <button type="submit">Suggest strong password</button>
+          <button onClick={generatePassword} type="submit">Suggest strong password</button>
         </form>
       </div>
     </div>
