@@ -20,6 +20,21 @@ body{
   gap: 10px;
 }
 
+.generated-password-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  background-color: #858282;
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 320px;
+}
+
+.generated-password-container p{
+  color: #ccc
+}
+
 article{
   display: flex;
   justify-content: space-between;
@@ -36,4 +51,14 @@ button{
 
 input{
   color: #000
+}
+
+.copy-btn{
+  fill: #dddddd9c;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.copy-btn:hover{
+  fill: #fff;
 }
