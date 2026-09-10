@@ -2,29 +2,33 @@ import React, { useState, useEffect } from 'react';
 import './index.css';
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [images, setImages] = useState([]);
+
   useEffect(() => {
-    const getUsers = async () => {
-      const res = await fetch('https://api.github.com/users');
+    const getImages = async () => {
+      const res = await fetch(
+        `https://api.unsplash.com/photos?client_id=${import.meta.env.VITE_UNSPLASH_API_KEY}`,
+      );
       const data = await res.json();
-      setUsers(data);
+      setImages(data);
+      console.log(data);
     };
-    getUsers();
+
+    getImages();
   }, []);
 
   return (
     <>
       <section>
-        {users.map((user) => (
-
-          <div className="profile-container">
-            <img src={user.avatar_url} alt="" className="profile-avatar" />
-
-            <div className="username-link-container">
-              <a href={user.html_url} className="profile-username">{user.login}</a>
-              <p className="followers">{user.id}</p>
-            </div>
-
+        {images.map((image) => (
+          <div key={image.id}>
+            <img src={} alt="" />
+            <h2>Satoshi Nakamoto</h2>
+            <ul>
+              <li>Facebook</li>
+              <li>X</li>
+              <li>Instagram</li>
+            </ul>
           </div>
         ))}
       </section>
