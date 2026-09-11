@@ -9,3 +9,21 @@
 body{
   background-color: #444;
 }
+
+img{
+  width: 100%;
+
+}
+
+section{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+ul{
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  gap: 0.5rem;
+}

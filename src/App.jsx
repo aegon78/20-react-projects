@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { FaInstagram, FaGlobe, FaTwitter } from 'react-icons/fa';
+
 import './index.css';
 
 function App() {
@@ -22,13 +24,39 @@ function App() {
       <section>
         {images.map((image) => (
           <div key={image.id}>
-            <img src={} alt="" />
-            <h2>Satoshi Nakamoto</h2>
+            <img src={image.urls.regular} alt={image.alt_description} />
+            <h2>{image.user.name}</h2>
+            {image.user.bio ? <p>{image.user.bio}</p> : null}
             <ul>
-              <li>Facebook</li>
-              <li>X</li>
-              <li>Instagram</li>
+              {image.user.social.instagram_username ? (
+                <li>
+                  <a
+                    href={`https://instagram/${image.user.social.instagram_username}`}
+                  >
+                    <FaInstagram />
+                  </a>
+                </li>
+              ) : null}
+
+              {image.user.social.twitter_username ? (
+                <li>
+                  <a
+                    href={`https://twitter/${image.user.social.twitter_username}`}
+                  >
+                    <FaTwitter />
+                  </a>
+                </li>
+              ) : null}
+
+              {image.user.social.portfolio_url ? (
+                <li>
+                  <a href={image.user.social.portfolio_url}>
+                    <FaGlobe />
+                  </a>
+                </li>
+              ) : null}
             </ul>
+            {image.description ? <p><b>About the image</b> {image.description} </p> : null}
           </div>
         ))}
       </section>
