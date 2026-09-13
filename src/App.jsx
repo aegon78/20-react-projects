@@ -5,14 +5,14 @@ import './index.css';
 
 function App() {
   const [images, setImages] = useState([]);
-
+  const [query, setQuery] = useState('keyboard')
   useEffect(() => {
     const getImages = async () => {
       const res = await fetch(
-        `https://api.unsplash.com/photos?client_id=${import.meta.env.VITE_UNSPLASH_API_KEY}`,
+        `https://api.unsplash.com/search/photos?client_id=${import.meta.env.VITE_UNSPLASH_API_KEY}&query=${query}`,
       );
       const data = await res.json();
-      setImages(data);
+      setImages(data.results);
       console.log(data);
     };
 
@@ -21,6 +21,10 @@ function App() {
 
   return (
     <>
+      <form>
+        <label htmlFor="search">Search category</label>
+        <input type="text" id='search' placeholder='Search category'/>
+      </form>
       <section>
         {images.map((image) => (
           <div key={image.id}>
